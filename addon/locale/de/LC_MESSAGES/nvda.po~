@@ -1,0 +1,57 @@
+# German translations for 'ProgressReader' package
+# German translation for 'ProgressReader'.
+# Copyright (C) 2025 Imam Kahraman
+# This file is distributed under the same license as the 'ProgressReader' package.
+# FIRST AUTHOR <imam.kahraman@googlemail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'ProgressReader' '0.1.4'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2025-02-03 21:45+0100\n"
+"PO-Revision-Date: 2025-02-03 21:53+0100\n"
+"Last-Translator: <EMAIL@ADDRESS>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CP1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: addon\globalPlugins\ProgressReader.py:32
+msgid "Liest den Fortschritt der Progressbar vor"
+msgstr ""
+
+#: addon\globalPlugins\ProgressReader.py:40
+msgid "Keine Progressbar gefunden"
+msgstr ""
+
+#: addon\globalPlugins\ProgressReader.py:77
+msgid " (aktiv)"
+msgstr ""
+
+#: addon\globalPlugins\ProgressReader.py:79
+msgid " (inaktiv)"
+msgstr ""
+
+#: addon\globalPlugins\ProgressReader.py:81
+#, python-brace-format
+msgid "{percent}% Fortschritt{status}"
+msgstr ""
+
+#: addon\globalPlugins\ProgressReader.py:87
+msgid "Fehler beim Auslesen: {}"
+msgstr ""
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "ProgressReader"
+msgstr ""
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
+msgstr ""

@@ -1,0 +1,57 @@
+# English translations for 'ProgressReader' package.
+# Copyright (C) 2025 Imam Kahraman
+# This file is distributed under the same license as the 'ProgressReader' package.
+# FIRST AUTHOR <imam.kahraman@googlemail.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'ProgressReader' '0.1.4'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2025-02-03 21:45+0100\n"
+"PO-Revision-Date: 2025-02-03 22:15+0100\n"
+"Last-Translator: Imam Kahraman <imam.kahraman@googlemail.com>\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CP1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+
+#: addon\globalPlugins\ProgressReader.py:32
+msgid "Liest den Fortschritt der Progressbar vor"
+msgstr "Reads the progress of the progress bar aloud."
+
+#: addon\globalPlugins\ProgressReader.py:40
+msgid "Keine Progressbar gefunden"
+msgstr "No progress bar found."
+
+#: addon\globalPlugins\ProgressReader.py:77
+msgid " (aktiv)"
+msgstr " (active)"
+
+#: addon\globalPlugins\ProgressReader.py:79
+msgid " (inaktiv)"
+msgstr " (inactive)"
+
+#: addon\globalPlugins\ProgressReader.py:81
+#, python-brace-format
+msgid "{percent}% Fortschritt{status}"
+msgstr "{percent}% Progress {status}"
+
+#: addon\globalPlugins\ProgressReader.py:87
+msgid "Fehler beim Auslesen: {}"
+msgstr "Error while progress: {}"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "ProgressReader"
+msgstr "ProgressReader"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
+msgstr "Announces the progress of the progress bar on pressing a button."
