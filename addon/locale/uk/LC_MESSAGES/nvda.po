@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ProgressReader package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ProgressReader 0.2.4\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2025-08-28 05:07+0000\n"
+"PO-Revision-Date: 2025-08-28 14:51+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.7\n"
+
+#. Define a category for the add-on in the input gestures dialog
+#. Translators: Category name for the add-on in the input gestures dialog
+#: addon/globalPlugins/progressReader.py:35
+msgid "Progress Reader"
+msgstr "Читач індикатора виконання"
+
+#. Translators: Description of the script that reads the progress of progress bars
+#: addon/globalPlugins/progressReader.py:65
+msgid "Liest den Fortschritt der Progressbar vor"
+msgstr "Повідомляє прогрес індикатора виконання"
+
+#. Translators: Message when no progress bar is found
+#: addon/globalPlugins/progressReader.py:81
+#: addon/globalPlugins/progressReader.py:176
+msgid "Keine Progressbar gefunden"
+msgstr "Не знайдено індикатора виконання"
+
+#. Translators: Status message when the progress bar is busy
+#: addon/globalPlugins/progressReader.py:117
+#: addon/globalPlugins/progressReader.py:161
+msgid " (aktiv)"
+msgstr " (активний)"
+
+#. Translators: Status message when the progress bar is unavailable
+#: addon/globalPlugins/progressReader.py:120
+#: addon/globalPlugins/progressReader.py:164
+msgid " (inaktiv)"
+msgstr " (неактивний)"
+
+#. Translators: Message that announces the progress percentage and status
+#: addon/globalPlugins/progressReader.py:123
+#: addon/globalPlugins/progressReader.py:167
+#, python-brace-format
+msgid "{percent}% Fortschritt {status}"
+msgstr "{percent}% виконано {status}"
+
+#. Translators: Error message when an exception occurs while reading progress
+#: addon/globalPlugins/progressReader.py:180
+msgid "Fehler beim Auslesen: {}"
+msgstr "Помилка під час зчитування: {}"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "ProgressReader"
+msgstr "Читач індикатора виконання"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
+msgstr "Повідомляє стан індикатора виконання за натисканням клавіші (комбінацію можна змінити)."
