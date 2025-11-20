@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Sagt auf Knopfdruck den Fortschritt der Progressbar an."""),
 	# version
-	"addon_version": '0.2.4',
+	"addon_version": '0.2.5',
 	# Author(s)
 	"addon_author": "Imam kahraman <imam.kahraman@googlemail.com>",
 	# URL for the add-on documentation support
@@ -37,7 +37,7 @@ addon_info = {
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
 	"addon_minimumNVDAVersion": "2021.2.0",
 	# Last NVDA version supported/tested (e.g. "2018.4.0", ideally more recent than minimum version)
-	"addon_lastTestedNVDAVersion": "2025.2",
+	"addon_lastTestedNVDAVersion": "2025.3.2",
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
