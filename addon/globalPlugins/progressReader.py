@@ -410,7 +410,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     @script(
         description=_("Öffnet ein Fenster mit automatischer Aktualisierung der Progressbar (merkt beim Öffnen gefundene Progress-Objekte)"),
         gesture="kb:NVDA+Shift+R",
-        category="Progress Reader"
+        category=_("Progress Reader")
     )
     def script_openRefreshWindow(self, gesture):
         # Toggle: Wenn Fenster bereits offen, schließe es
@@ -495,25 +495,38 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
     @script(
         description=_("Setzt das Aktualisierungsintervall für das Auto-Refresh-Fenster"),
         gesture="kb:NVDA+Shift+U",
-        category="Progress Reader"
+        category=_("Progress Reader")
     )
     def script_setInterval(self, gesture):
-        # Dialog: Sekunden statt Millisekunden
-        dlg = wx.TextEntryDialog(None, _("Neues Intervall in Sekunden:"), _("Intervall einstellen"))
+        # Öffne den Dialog sicher auf dem GUI-Thread und mit dem NVDA-Hauptfenster als Parent
+        def _showIntervalDialog():
+            dlg = wx.TextEntryDialog(gui.mainFrame, _("Neues Intervall in Sekunden:"), _("Intervall einstellen"))
+            try:
+                if dlg.ShowModal() == wx.ID_OK:
+                    val = dlg.GetValue()
+                    try:
+                        newSeconds = int(val)
+                        if newSeconds <= 0:
+                            raise ValueError("non-positive")
+                        newVal = newSeconds * 1000
+                        GlobalPlugin.refreshInterval = newVal
+                        _setConfigInterval(newVal)
+                        ui.message(_("Intervall gesetzt auf {} ms").format(newVal))
+                        if self.refreshFrame:
+                            self._startAutoRefresh()
+                    except Exception:
+                        ui.message(_("Ungültige Eingabe"))
+            finally:
+                try:
+                    dlg.Destroy()
+                except Exception:
+                    pass
+
         try:
-            if dlg.ShowModal() == wx.ID_OK:
-                val = dlg.GetValue()
-                newSeconds = int(val)
-                newVal = newSeconds * 1000
-                GlobalPlugin.refreshInterval = newVal
-                _setConfigInterval(newVal)
-                ui.message(_("Intervall gesetzt auf {} ms").format(newVal))
-                if self.refreshFrame:
-                    self._startAutoRefresh()
+            wx.CallAfter(_showIntervalDialog)
         except Exception:
-            ui.message(_("Ungültige Eingabe"))
-        finally:
-            dlg.Destroy()
+            # Fallback: direkt aufrufen
+            _showIntervalDialog()
 
     def _findProgressBars(self):
         """
