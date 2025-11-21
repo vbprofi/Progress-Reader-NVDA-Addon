@@ -23,11 +23,11 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description=_("""Sagt auf Knopfdruck den Fortschritt der Progressbar an."""),
 	# version
-	addon_version="0.2.5",
+	addon_version="0.3.0",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""Changelog for the add-on version.
-It can span multiple lines."""),
+refactor: add auto-refresh window with configurable interval, NVDA settings panel integration, reset button, and gesture to update interval."""),
 	# Author(s)
 	addon_author="Imam kahraman <imam.kahraman@googlemail.com>",
 	# URL for the add-on documentation support

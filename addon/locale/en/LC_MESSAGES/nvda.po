@@ -1,67 +1,147 @@
-# English translations for 'ProgressReader' package.
-# Copyright (C) 2025 Imam Kahraman
-# This file is distributed under the same license as the 'ProgressReader' package.
-# FIRST AUTHOR <imam.kahraman@googlemail.com>, 2025.
+# English translations for PACKAGE package.
+# Copyright (C) 2025 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# <EMAIL@ADDRESS>, 2025.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 'ProgressReader' '0.1.4'\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2025-02-04 17:50+0100\n"
-"PO-Revision-Date: 2025-02-03 22:15+0100\n"
-"Last-Translator: Imam Kahraman <imam.kahraman@googlemail.com>\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-21 02:10+0100\n"
+"PO-Revision-Date: 2025-11-21 02:14+0100\n"
+"Last-Translator: <EMAIL@ADDRESS>\n"
 "Language-Team: English\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CP1252\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
 
-#. Define a category for the add-on in the input gestures dialog
-#: addon\globalPlugins\ProgressReader.py:24
-#, fuzzy
+#: addon/globalPlugins/progressReader.py:56
+#: addon/globalPlugins/progressReader.py:177
+#: addon/globalPlugins/progressReader.py:413
+#: addon/globalPlugins/progressReader.py:451
+#: addon/globalPlugins/progressReader.py:498
 msgid "Progress Reader"
-msgstr "ProgressReader"
+msgstr "Progress Reader"
 
-#: addon\globalPlugins\ProgressReader.py:53
-msgid "Liest den Fortschritt der Progressbar vor"
-msgstr "Reads the progress of the progress bar aloud."
+#: addon/globalPlugins/progressReader.py:68
+msgid "Aktualisierungsintervall (Sekunden):"
+msgstr "Update interval (seconds):"
 
-#: addon\globalPlugins\ProgressReader.py:68
-#: addon\globalPlugins\ProgressReader.py:156
-msgid "Keine Progressbar gefunden"
-msgstr "No progress bar found."
+#: addon/globalPlugins/progressReader.py:80
+msgid "Zurücksetzen"
+msgstr "Reset"
 
-#: addon\globalPlugins\ProgressReader.py:103
-#: addon\globalPlugins\ProgressReader.py:144
+#: addon/globalPlugins/progressReader.py:83
+msgid "Spenden"
+msgstr "Donate"
+
+#: addon/globalPlugins/progressReader.py:91
+msgid "Intervall auf Standard zurückgesetzt: {} s"
+msgstr "Interval reset to default: {} s"
+
+#: addon/globalPlugins/progressReader.py:98
+msgid "Spenden-Seite im Browser geöffnet"
+msgstr "Donation page opened in browser"
+
+#: addon/globalPlugins/progressReader.py:100
+msgid "Konnte die Spenden-Seite nicht öffnen"
+msgstr "Could not open the donation page"
+
+#: addon/globalPlugins/progressReader.py:116
+msgid "Intervall gespeichert: {} ms"
+msgstr "Interval saved: {} ms"
+
+#: addon/globalPlugins/progressReader.py:121
+msgid "Ungültiger Intervallwert"
+msgstr "Invalid interval value"
+
+#: addon/globalPlugins/progressReader.py:266
+#: addon/globalPlugins/progressReader.py:335
 msgid " (aktiv)"
 msgstr " (active)"
 
-#: addon\globalPlugins\ProgressReader.py:105
-#: addon\globalPlugins\ProgressReader.py:146
+#: addon/globalPlugins/progressReader.py:268
+#: addon/globalPlugins/progressReader.py:337
 msgid " (inaktiv)"
 msgstr " (inactive)"
 
-#: addon\globalPlugins\ProgressReader.py:107
-#: addon\globalPlugins\ProgressReader.py:148
+#: addon/globalPlugins/progressReader.py:270
+#: addon/globalPlugins/progressReader.py:339
 #, python-brace-format
-msgid "{percent}% Fortschritt{status}"
-msgstr "{percent}% Progress {status}"
+msgid "{percent}% Fortschritt {status}"
+msgstr "{percent}% progress {status}"
 
-#: addon\globalPlugins\ProgressReader.py:159
+#: addon/globalPlugins/progressReader.py:353
+msgid "Keine Progressbar gefunden"
+msgstr "No progress bar found"
+
+#: addon/globalPlugins/progressReader.py:387
 msgid "Fehler beim Auslesen: {}"
-msgstr "Error while progress: {}"
+msgstr "Error while reading: {}"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
+#: addon/globalPlugins/progressReader.py:411
+msgid ""
+"Öffnet ein Fenster mit automatischer Aktualisierung der Progressbar (merkt "
+"beim Öffnen gefundene Progress-Objekte)"
+msgstr "Opens a window with automatic refresh of the progress bar (remembers progress objects found when opening)"
+
+#: addon/globalPlugins/progressReader.py:424
+msgid "Auto-Refresh Fenster geschlossen"
+msgstr "Auto-refresh window closed"
+
+#: addon/globalPlugins/progressReader.py:444
+msgid "{} Progress-Objekt(e) gemerkt"
+msgstr "{} progress object(s) remembered"
+
+#: addon/globalPlugins/progressReader.py:446
+msgid "Keine Progress-Objekte gefunden zum Merken"
+msgstr "No progress objects found to remember"
+
+#: addon/globalPlugins/progressReader.py:448
+msgid "Fehler beim Merken der Progress-Objekte"
+msgstr "Error while remembering progress objects"
+
+#: addon/globalPlugins/progressReader.py:458
+#: addon/globalPlugins/progressReader.py:460
+msgid "Lade Fortschritt..."
+msgstr "Loading progress..."
+
+#: addon/globalPlugins/progressReader.py:496
+msgid "Setzt das Aktualisierungsintervall für das Auto-Refresh-Fenster"
+msgstr "Sets the update interval for the auto-refresh window"
+
+#: addon/globalPlugins/progressReader.py:503
+msgid "Neues Intervall in Sekunden:"
+msgstr "New interval in seconds:"
+
+#: addon/globalPlugins/progressReader.py:503
+msgid "Intervall einstellen"
+msgstr "Set interval"
+
+#: addon/globalPlugins/progressReader.py:514
+msgid "Intervall gesetzt auf {} ms"
+msgstr "Interval set to {} s"
+
+#: addon/globalPlugins/progressReader.py:518
+msgid "Ungültige Eingabe"
+msgstr "Invalid input"
+
+#: buildVars.py:21
 msgid "ProgressReader"
 msgstr "ProgressReader"
 
-#. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#: buildVars.py:24
 msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
-msgstr "Announces the progress of the progress bar on pressing a button."
+msgstr "Announces the progress bar status at the press of a button."
+
+#: buildVars.py:29
+msgid ""
+"Changelog for the add-on version.\n"
+"refactor: add auto-refresh window with configurable interval, NVDA settings "
+"panel integration, reset button, and gesture to update interval."
+msgstr ""
+"Changelog for the add-on version.\n"
+"Refactor: added auto-refresh window with configurable interval, NVDA settings "
+"panel integration, reset button, and gesture to update interval."

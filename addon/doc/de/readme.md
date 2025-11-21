@@ -6,6 +6,7 @@
 Lizenz: GNU General Public License v3 (GPL-3.0) (siehe LICENSE-Datei: https://www.gnu.org/licenses/gpl-3.0.txt)
 
 Dieses NVDA-Addon ermöglicht es, Fortschrittsbalken (Progressbars) in verschiedenen Anwendungen auszulesen und den aktuellen Fortschritt per Sprachausgabe wiederzugeben. Die Erkennung erfolgt über mehrere Schnittstellen, um eine breite Kompatibilität mit unterschiedlichen Software-Technologien sicherzustellen.
+Zusätzlich bietet das Add-on ein eigenes **Auto-Refresh-Fenster** mit mehrzeiliger, schreibgeschützter Textbox, die den Fortschritt automatisch aktualisiert
 
 [Hier geht es zur aktuellen Version zum Download](https://davidacm.github.io/getlatest/gh/vbprofi/Progress-Reader-NVDA-Addon/)
 
@@ -41,21 +42,36 @@ Dieses NVDA-Addon ermöglicht es, Fortschrittsbalken (Progressbars) in verschied
 ## 2) Verwendung der Fortschrittsanzeige
 
 1. **Wechsle in eine Anwendung mit einer aktiven Fortschrittsanzeige (z. B. Dateiübertragung, Ladebalken, Softwareinstallation).**
-2. **Drücke NVDA + Shift + U, um den aktuellen Fortschritt auszulesen.**
-3. **NVDA gibt den Fortschritt in Prozent aus, z. B. "42% Fortschritt (aktiv)".**
+2. **Drücke NVDA + Shift + R, um das Auto-Refresh-Fenster zu öffnen.**  
+   - Beim Öffnen werden automatisch die gefundenen Progressbars gemerkt.  
+   - Das Fenster zeigt den Fortschritt kontinuierlich in einer mehrzeiligen Textbox an.  
+   - Der Fokus springt bei jeder Aktualisierung automatisch auf die erste Zeile.  
+   - Mit erneutem Drücken von NVDA + Shift + R wird das Fenster geschlossen.
+3. **Drücke NVDA + Shift + U, um das Aktualisierungsintervall (in Sekunden) zu ändern.**
 
 ---
 
 ## 3) Hinweise zur Funktionalität
 
-- Falls mehrere Fortschrittsbalken im aktiven Fenster vorhanden sind, wird der erste gefundene verwendet.
-- Wenn kein Progressbar erkannt wird, dann gibt NVDA die Meldung "Keine Progressbar gefunden" aus.
-- Falls der Fortschrittswert oder das Maximum nicht ermittelt werden kann, wird ein Standardwert von 0-100% angenommen.
+- Falls mehrere Fortschrittsbalken im aktiven Fenster vorhanden sind, werden alle gefundenen gemerkt und im Auto-Refresh-Fenster angezeigt.
+- Wenn kein Progressbar erkannt wird, gibt NVDA die Meldung "Keine Progressbar gefunden" aus.
+- Falls der Fortschrittswert oder das Maximum nicht ermittelt werden kann, wird ein Standardwert von 0–100% angenommen.
 - Manche Anwendungen verwenden proprietäre UI-Elemente, die nicht standardmäßig erkannt werden können.
+- Alle Tastenkombinationen sind über die NVDA-Eingabegesten konfigurierbar und können vom Benutzer angepasst werden.
 
 ---
 
 ## 4) Versionsverlauf
+
+v0.3.0:
+- Ausgabefenster auf mehrzeiliges, schreibgeschütztes Textfeld (TextCtrl) umgestellt
+- Automatischer Fokus auf die Textbox beim Öffnen, Cursor springt bei Aktualisierung auf die erste Zeile
+- Einstellungsdialog geändert: Eingabe des Intervalls in Sekunden (intern weiterhin Millisekunden)
+- Reset-Button im Einstellungsdialog setzt Intervall auf Standardwert zurück
+- Neuer „Spenden“-Button im Einstellungsdialog öffnet die PayPal-Seite im Standardbrowser
+- Progressbar-Fenster/Objekte werden beim Öffnen des Refresh-Fensters automatisch gemerkt
+- Alle Benutzeroberflächen-Strings für Übersetzung vorbereitet
+- Gesten über @script-Decorator registriert, sodass sie im NVDA-Eingabegesten-Dialog vom Nutzer angepasst werden können
 
 ### v0.2.5
 - Für NVDA 2025.3.2 aktualisiert.
