@@ -494,7 +494,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
     @script(
         description=_("Setzt das Aktualisierungsintervall für das Auto-Refresh-Fenster"),
-        gesture="kb:NVDA+Shift+I",
+        gesture="kb:NVDA+Shift+U",
         category="Progress Reader"
     )
     def script_setInterval(self, gesture):
