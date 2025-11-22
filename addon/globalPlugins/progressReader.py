@@ -31,7 +31,7 @@ from globalCommands import SCRCAT_CONFIG
 
 addonHandler.initTranslation()
 
-# Konfiguration
+# configuration
 ADDON_CONF_SECTION = "progressReader"
 DEFAULT_INTERVAL_MS = 2000  # intern in Millisekunden
 
@@ -57,29 +57,29 @@ class ProgressReaderSettingsPanel(SettingsPanel):
 	id = "progressReader"
 
 	def makeSettings(self, settingsSizer):
-		# sizer so verwenden wie NVDA es übergibt
+		# Use sizer as NVDA passes it on
 		sHelper = guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 
 		currentIntervalMs = _getConfigInterval()
-		# Anzeige in Sekunden für den Benutzer (ganzzahlig)
+		# Display in seconds for the user (integer)
 		currentIntervalSeconds = int(round(currentIntervalMs / 1000.0))
 
-		# Label: Sekunden
+		# Label: Seconds
 		lbl = wx.StaticText(self, label=_("Aktualisierungsintervall (Sekunden):"))
 		sHelper.addItem(lbl)
 
-		# SpinCtrl erstellen, Range und Wert setzen (Sekunden)
+		# Create SpinCtrl, set range and value (seconds)
 		self.intervalCtrl = wx.SpinCtrl(self, style=wx.SP_ARROW_KEYS)
-		# 1s .. 300s (5 Minuten) als vernünftiger Bereich
+		# 1s .. 300s (5 minutes) as a reasonable range
 		self.intervalCtrl.SetRange(1, 300)
 		self.intervalCtrl.SetValue(str(currentIntervalSeconds))
 		sHelper.addItem(self.intervalCtrl)
 
-		# Zeile mit Reset- und Spenden-Buttons
+		# reset button
 		btnRow = guiHelper.BoxSizerHelper(self, orientation=wx.HORIZONTAL)
 		self.resetBtn = wx.Button(self, label=_("Zurücksetzen"))
 		btnRow.addItem(self.resetBtn)
-		# Spenden-Button
+		# donation-Button
 		self.donateBtn = wx.Button(self, label=_("Spenden"))
 		btnRow.addItem(self.donateBtn)
 		sHelper.addItem(btnRow.sizer)
@@ -101,7 +101,7 @@ class ProgressReaderSettingsPanel(SettingsPanel):
 		self.donateBtn.Bind(wx.EVT_BUTTON, _onDonate)
 
 	def postInit(self):
-		# Setze Fokus auf das Control, wenn möglich
+		# Focus on control, if possible
 		try:
 			self.intervalCtrl.SetFocus()
 		except Exception:
@@ -121,13 +121,13 @@ class ProgressReaderSettingsPanel(SettingsPanel):
 			ui.message(_("Ungültiger Intervallwert"))
 
 	def onDiscard(self):
-		# nichts weiter nötig
+		# nothing else is needed
 		pass
 
 
-# Registrierung des Panels beim Import (robuster für NVDA 2025+)
+# Panel registration during import (more robust for NVDA 2025+)
 try:
-	# Versuche neue API first
+	# Try the new API first
 	from gui import settings as guiSettings
 	if hasattr(guiSettings, "registerSettingsPanel"):
 		try:
@@ -137,7 +137,7 @@ try:
 			if ProgressReaderSettingsPanel not in NVDASettingsDialog.categoryClasses:
 				NVDASettingsDialog.categoryClasses.append(ProgressReaderSettingsPanel)
 	else:
-		# Fallback: klassischer Mechanismus
+		# Fallback: classic mechanism
 		if ProgressReaderSettingsPanel not in NVDASettingsDialog.categoryClasses:
 			NVDASettingsDialog.categoryClasses.append(ProgressReaderSettingsPanel)
 except Exception:
@@ -161,7 +161,7 @@ def disableInSecureMode(decoratedCls):
 
 @disableInSecureMode
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-	"""NVDA GlobalPlugin: Fenster mit Auto-Refresh für Progressbars."""
+	"""NVDA GlobalPlugin: Window with auto-refresh for progress bars."""
 
 	refreshInterval = _getConfigInterval()
 	_instance = None
@@ -179,12 +179,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.refreshText = None  # wx.TextCtrl
 		self.refreshTimer = None
 
-		# Merkliste für gefundene Progressbar-Fenster/Objekte
-		# Liste von NVDA-Objekten, die beim Merken gefunden wurden
+		# Watch list for found progress bar windows/objects
+		# List of NVDA objects found during remembered
 		self.rememberedProgressObjects = []
 		self.rememberingActive = False
 
-		# lade Konfiguration beim Start
+		# Load configuration at startup
 		GlobalPlugin.refreshInterval = _getConfigInterval()
 
 	def terminate(self):
@@ -205,7 +205,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		GlobalPlugin._instance = None
 
 	def onSettings(self, evt):
-		# Öffnet das NVDA Settings Dialog direkt mit unserem Panel
+		# Opens the NVDA Settings dialog directly with our panel
 		gui.mainFrame.popupSettingsDialog(NVDASettingsDialog, ProgressReaderSettingsPanel)
 
 	def chooseGesture(self, gesture):
@@ -221,17 +221,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return 0.0
 
 	def _collectProgressTexts_from_objects(self, objs):
-		"""Sammelt Fortschrittsmeldungen aus einer Liste von NVDA-Objekten."""
+		"""Collects progress reports from a list of NVDA objects."""
 		messages = []
 		for obj in objs:
 			try:
-				# Versuche zuerst vorhandene textuelle Beschreibung
+				# First try existing textual description
 				name = getattr(obj, "name", None)
 				if name and "%" in name:
 					messages.append(name)
 					continue
 
-				# UIA / IAccessible / direkte Attribute prüfen wie vorher
+				# UIA / IAccessible / check direct attributes as before
 				current = self._parseValue(
 					getattr(
 						obj,
@@ -272,19 +272,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					status=status
 				))
 			except Exception:
-				# weiter mit nächsten Element
+				# continue with next element
 				continue
 		return messages
 
 	def _collectProgressTexts(self):
-		"""Sammelt Fortschrittsmeldungen. Nutzt gemerkte Objekte, falls vorhanden."""
-		# Wenn gemerkte Objekte vorhanden, verwende diese
+		"""Collect progress reports. Use saved objects, if available."""
+		# If there are any saved objects, use them.
 		if self.rememberedProgressObjects:
-			# Filtere zerstörte/invalidierte Objekte heraus (sicherstellen, dass Attribute noch existieren)
+			# Filter out destroyed/invalidated objects (ensure that attributes still exist)
 			valid_objs = []
 			for o in self.rememberedProgressObjects:
 				try:
-					# Ein einfacher Zugriffstest
+					# A simple access test
 					_ = getattr(o, "role", None)
 					valid_objs.append(o)
 				except Exception:
@@ -292,7 +292,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if valid_objs:
 				return self._collectProgressTexts_from_objects(valid_objs)
 
-		# Falls keine gemerkten Objekte, suche wie zuvor die sichtbaren ProgressBars
+		# If there are no marked objects, search for visible progress bars as before.
 		progressBars = self._findProgressBars()
 		messages = []
 		for progressBar, progressText in progressBars:
@@ -352,7 +352,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			else:
 				text = _("Keine Progressbar gefunden")
 			if self.refreshText:
-				# setze den Text, mache readonly, setze cursor und Fokus an die erste Zeile
+				# set the text, make it read-only, set the cursor and focus to the first line
 				try:
 					self.refreshText.SetEditable(True)
 				except Exception:
@@ -377,7 +377,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				except Exception:
 					pass
 				try:
-					# Fokus auf das TextCtrl setzen
+					# Set focus on TextCtrl
 					self.refreshText.SetFocus()
 				except Exception:
 					pass
@@ -413,7 +413,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=_("Progress Reader")
 	)
 	def script_openRefreshWindow(self, gesture):
-		# Toggle: Wenn Fenster bereits offen, schließe es
+		# Toggle: If the window is already open, close it.
 		if self.refreshFrame:
 			self._stopAutoRefresh()
 			try:
@@ -424,7 +424,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ui.message(_("Auto-Refresh Fenster geschlossen"))
 			return
 
-		# Beim Öffnen automatisch aktuell gefundene Progress-Objekte merken
+		# Automatically remember currently found Progress objects when opening
 		try:
 			found = self._findProgressBars()
 			objs = [pb for pb, txt in found]
@@ -447,12 +447,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception:
 			ui.message(_("Fehler beim Merken der Progress-Objekte"))
 
-		# Erstelle das Fenster mit TextCtrl
+		# Create the window with TextCtrl
 		self.refreshFrame = wx.Frame(None, title=_("Progress Reader"), size=(480, 320))
 		panel = wx.Panel(self.refreshFrame)
 		vbox = wx.BoxSizer(wx.VERTICAL)
 
-		# Mehrzeiliges readonly TextCtrl, füllt den Raum
+		# Multi-line read-only TextCtrl, fills the space
 		style = wx.TE_MULTILINE | wx.TE_READONLY | wx.BORDER_SUNKEN | wx.HSCROLL
 		try:
 			self.refreshText = wx.TextCtrl(panel, value=_("Lade Fortschritt..."), style=style)
@@ -464,7 +464,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		panel.SetSizer(vbox)
 		self.refreshFrame.Show()
 
-		# Versuche Fokus sofort auf das TextCtrl zu setzen
+		# Try to set focus to TextCtrl immediately
 		try:
 			self.refreshText.SetFocus()
 			try:
@@ -478,7 +478,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		except Exception:
 			pass
 
-		# sofort einmal aktualisieren und Timer starten
+		# Update immediately and start timer
 		self._updateProgressWindow()
 		self._startAutoRefresh()
 
@@ -498,7 +498,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		category=_("Progress Reader")
 	)
 	def script_setInterval(self, gesture):
-		# Öffne den Dialog sicher auf dem GUI-Thread und mit dem NVDA-Hauptfenster als Parent
+		# Open the dialog safely on the GUI thread and with the NVDA main window as the parent
 		def _showIntervalDialog():
 			dlg = wx.TextEntryDialog(gui.mainFrame, _("Neues Intervall in Sekunden:"), _("Intervall einstellen"))
 			try:
@@ -525,13 +525,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			wx.CallAfter(_showIntervalDialog)
 		except Exception:
-			# Fallback: direkt aufrufen
+			# Fallback: call directly
 			_showIntervalDialog()
 
 	def _findProgressBars(self):
 		"""
-		Durchsucht die aktuelle Foreground-Hierarchie nach Progressbars, wie bisher.
-		Liefert Liste von (obj, text) Tupeln.
+Searches the current foreground hierarchy for progress bars, as before.
+		Returns a list of (obj, text) tuples.
 		"""
 		q = Queue()
 		root = api.getForegroundObject()
