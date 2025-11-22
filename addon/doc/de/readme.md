@@ -63,7 +63,7 @@ Zusätzlich bietet das Add-on ein eigenes **Auto-Refresh-Fenster** mit mehrzeili
 
 ## 4) Versionsverlauf
 
-v0.3.0:
+### v0.3.0:
 - Ausgabefenster auf mehrzeiliges, schreibgeschütztes Textfeld (TextCtrl) umgestellt
 - Automatischer Fokus auf die Textbox beim Öffnen, Cursor springt bei Aktualisierung auf die erste Zeile
 - Einstellungsdialog geändert: Eingabe des Intervalls in Sekunden (intern weiterhin Millisekunden)
