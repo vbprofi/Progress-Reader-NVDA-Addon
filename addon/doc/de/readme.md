@@ -63,6 +63,9 @@ Zusätzlich bietet das Add-on ein eigenes **Auto-Refresh-Fenster** mit mehrzeili
 
 ## 4) Versionsverlauf
 
+### v0.4.0:
+- Bump Version and tested in latest NVDA 2026.1.1
+
 ### v0.3.0:
 - Ausgabefenster auf mehrzeiliges, schreibgeschütztes Textfeld (TextCtrl) umgestellt
 - Automatischer Fokus auf die Textbox beim Öffnen, Cursor springt bei Aktualisierung auf die erste Zeile
