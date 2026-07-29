@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'ProgressReader' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 'ProgressReader' '0.3.0'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-07-29 09:51+0700\n"
+"PO-Revision-Date: 2026-07-29 10:44+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Create the window with TextCtrl
+#: addon\globalPlugins\progressReader.py:56
+#: addon\globalPlugins\progressReader.py:177
+#: addon\globalPlugins\progressReader.py:413
+#: addon\globalPlugins\progressReader.py:451
+#: addon\globalPlugins\progressReader.py:498
+msgid "Progress Reader"
+msgstr "Trình đọc thanh tiến trình"
+
+#. Label: Seconds
+#: addon\globalPlugins\progressReader.py:68
+msgid "Aktualisierungsintervall (Sekunden):"
+msgstr "Khoảng thời gian cập nhật (giây):"
+
+#: addon\globalPlugins\progressReader.py:80
+msgid "Zurücksetzen"
+msgstr "Đặt lại về mặc định"
+
+#. donation-Button
+#: addon\globalPlugins\progressReader.py:83
+msgid "Spenden"
+msgstr "Quyên góp"
+
+#: addon\globalPlugins\progressReader.py:91
+#, python-brace-format
+msgid "Intervall auf Standard zurückgesetzt: {} s"
+msgstr "Khoảng thời gian đặt lại về mặc định: {} s"
+
+#: addon\globalPlugins\progressReader.py:98
+msgid "Spenden-Seite im Browser geöffnet"
+msgstr "Trang quyên góp đã mở trong trình duyệt của bạn"
+
+#: addon\globalPlugins\progressReader.py:100
+msgid "Konnte die Spenden-Seite nicht öffnen"
+msgstr "Không thể mở trang quyên góp"
+
+#: addon\globalPlugins\progressReader.py:116
+#, python-brace-format
+msgid "Intervall gespeichert: {} ms"
+msgstr "Khoảng thời gian đã lưu: {} ms"
+
+#: addon\globalPlugins\progressReader.py:121
+msgid "Ungültiger Intervallwert"
+msgstr "Khoảng thời gian không hợp lệ"
+
+#: addon\globalPlugins\progressReader.py:266
+#: addon\globalPlugins\progressReader.py:335
+msgid " (aktiv)"
+msgstr " (hoạt động)"
+
+#: addon\globalPlugins\progressReader.py:268
+#: addon\globalPlugins\progressReader.py:337
+msgid " (inaktiv)"
+msgstr " (không hoạt động)"
+
+#: addon\globalPlugins\progressReader.py:270
+#: addon\globalPlugins\progressReader.py:339
+#, python-brace-format
+msgid "{percent}% Fortschritt {status}"
+msgstr "{percent}% tiến độ {status}"
+
+#: addon\globalPlugins\progressReader.py:353
+msgid "Keine Progressbar gefunden"
+msgstr "Không tìm thấy thanh tiến trình"
+
+#: addon\globalPlugins\progressReader.py:387
+#, python-brace-format
+msgid "Fehler beim Auslesen: {}"
+msgstr "Lỗi không thể đọc: {}"
+
+#: addon\globalPlugins\progressReader.py:411
+msgid ""
+"Öffnet ein Fenster mit automatischer Aktualisierung der Progressbar (merkt "
+"beim Öffnen gefundene Progress-Objekte)"
+msgstr ""
+"Mở một cửa sổ với một thanh tiến trình được cập nhật tự động (ghi nhớ các "
+"thanh tiến trình được tìm thấy khi mở)"
+
+#: addon\globalPlugins\progressReader.py:424
+msgid "Auto-Refresh Fenster geschlossen"
+msgstr "Cửa sổ tự động làm mới đã đóng"
+
+#: addon\globalPlugins\progressReader.py:444
+#, python-brace-format
+msgid "{} Progress-Objekt(e) gemerkt"
+msgstr "{} (Các) thanh tiến trình được ghi nhớ"
+
+#: addon\globalPlugins\progressReader.py:446
+msgid "Keine Progress-Objekte gefunden zum Merken"
+msgstr "Không tìm thấy thanh tiến trình nào cần ghi nhớ"
+
+#: addon\globalPlugins\progressReader.py:448
+msgid "Fehler beim Merken der Progress-Objekte"
+msgstr "Lỗi không thể ghi nhớ thanh tiến trình"
+
+#: addon\globalPlugins\progressReader.py:458
+#: addon\globalPlugins\progressReader.py:460
+msgid "Lade Fortschritt..."
+msgstr "Đang tải thanh tiến trình..."
+
+#: addon\globalPlugins\progressReader.py:496
+msgid "Setzt das Aktualisierungsintervall für das Auto-Refresh-Fenster"
+msgstr "Đặt khoảng thời gian làm mới cho cửa sổ tự động làm mới"
+
+#: addon\globalPlugins\progressReader.py:503
+msgid "Neues Intervall in Sekunden:"
+msgstr "Khoảng thời gian mới tính bằng giây:"
+
+#: addon\globalPlugins\progressReader.py:503
+msgid "Intervall einstellen"
+msgstr "Đặt khoảng thời gian"
+
+#: addon\globalPlugins\progressReader.py:514
+#, python-brace-format
+msgid "Intervall gesetzt auf {} ms"
+msgstr "Khoảng thời gian được đặt thành {} ms"
+
+#: addon\globalPlugins\progressReader.py:518
+msgid "Ungültige Eingabe"
+msgstr "Khoảng thời gian không hợp lệ"
+
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
+msgid "ProgressReader"
+msgstr "Trình đọc thanh tiến trình"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
+msgstr "Thông báo tiến trình của thanh tiến trình chỉ bằng cách nhấn nút."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid ""
+"Changelog for the add-on version.\n"
+"refactor: add auto-refresh window with configurable interval, NVDA settings "
+"panel integration, reset button, and gesture to update interval."
+msgstr ""
+"Nhật ký thay đổi của phiên bản tiện ích bổ sung.\n"
+"refactor: thêm cửa sổ tự động làm mới với khoảng thời gian có thể cấu hình, "
+"tích hợp bảng cài đặt NVDA, nút đặt lại và cử chỉ để cập nhật khoảng thời "
+"gian."

@@ -14,7 +14,7 @@
 import globalPluginHandler
 import ui
 import api
-from scriptHandler import script
+from scriptHandler import script, getScriptCount
 import addonHandler
 import controlTypes
 import UIAHandler
