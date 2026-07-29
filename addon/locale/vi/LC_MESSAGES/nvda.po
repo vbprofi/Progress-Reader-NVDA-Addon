@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: 'ProgressReader' '0.3.0'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-07-29 09:51+0700\n"
-"PO-Revision-Date: 2026-07-29 10:44+0700\n"
+"PO-Revision-Date: 2026-07-29 13:49+0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: vi\n"
@@ -103,15 +103,15 @@ msgstr "Cửa sổ tự động làm mới đã đóng"
 #: addon\globalPlugins\progressReader.py:444
 #, python-brace-format
 msgid "{} Progress-Objekt(e) gemerkt"
-msgstr "{} (Các) thanh tiến trình được ghi nhớ"
+msgstr "{} (Các) thanh tiến trình được theo dõi"
 
 #: addon\globalPlugins\progressReader.py:446
 msgid "Keine Progress-Objekte gefunden zum Merken"
-msgstr "Không tìm thấy thanh tiến trình nào cần ghi nhớ"
+msgstr "Không tìm thấy thanh tiến trình nào cần theo dõi"
 
 #: addon\globalPlugins\progressReader.py:448
 msgid "Fehler beim Merken der Progress-Objekte"
-msgstr "Lỗi không thể ghi nhớ thanh tiến trình"
+msgstr "Lỗi không thể theo dõi thanh tiến trình"
 
 #: addon\globalPlugins\progressReader.py:458
 #: addon\globalPlugins\progressReader.py:460
