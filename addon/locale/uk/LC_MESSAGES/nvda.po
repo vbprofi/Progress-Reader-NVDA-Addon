@@ -8,66 +8,161 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ProgressReader 0.2.4\n"
 "Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2025-08-28 05:07+0000\n"
-"PO-Revision-Date: 2025-08-28 14:51+0300\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2026-01-25 08:35+0000\n"
+"PO-Revision-Date: 2026-01-25 14:42+0200\n"
+"Last-Translator: Nazarii Balanda <balaraz@tuta.io>\n"
 "Language-Team: \n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.8\n"
 
-#. Define a category for the add-on in the input gestures dialog
-#. Translators: Category name for the add-on in the input gestures dialog
-#: addon/globalPlugins/progressReader.py:35
+#. Create the window with TextCtrl
+#: addon/globalPlugins/progressReader.py:56
+#: addon/globalPlugins/progressReader.py:177
+#: addon/globalPlugins/progressReader.py:413
+#: addon/globalPlugins/progressReader.py:451
+#: addon/globalPlugins/progressReader.py:498
 msgid "Progress Reader"
 msgstr "Читач індикатора виконання"
 
-#. Translators: Description of the script that reads the progress of progress bars
-#: addon/globalPlugins/progressReader.py:65
-msgid "Liest den Fortschritt der Progressbar vor"
-msgstr "Повідомляє прогрес індикатора виконання"
+#. Label: Seconds
+#: addon/globalPlugins/progressReader.py:68
+msgid "Aktualisierungsintervall (Sekunden):"
+msgstr "Інтервал оновлення (секунди):"
 
-#. Translators: Message when no progress bar is found
-#: addon/globalPlugins/progressReader.py:81
-#: addon/globalPlugins/progressReader.py:176
-msgid "Keine Progressbar gefunden"
-msgstr "Не знайдено індикатора виконання"
+#: addon/globalPlugins/progressReader.py:80
+msgid "Zurücksetzen"
+msgstr "Скинути"
 
-#. Translators: Status message when the progress bar is busy
-#: addon/globalPlugins/progressReader.py:117
-#: addon/globalPlugins/progressReader.py:161
+#. donation-Button
+#: addon/globalPlugins/progressReader.py:83
+msgid "Spenden"
+msgstr "Пожертвувати"
+
+#: addon/globalPlugins/progressReader.py:91
+msgid "Intervall auf Standard zurückgesetzt: {} s"
+msgstr "Скидання інтервалу до значення за замовчуванням: {} с"
+
+#: addon/globalPlugins/progressReader.py:98
+msgid "Spenden-Seite im Browser geöffnet"
+msgstr "У браузері відкрито сторінку пожертв"
+
+#: addon/globalPlugins/progressReader.py:100
+msgid "Konnte die Spenden-Seite nicht öffnen"
+msgstr "Не вдалося відкрити сторінку пожертв"
+
+#: addon/globalPlugins/progressReader.py:116
+msgid "Intervall gespeichert: {} ms"
+msgstr "Збережений інтервал: {} мс"
+
+#: addon/globalPlugins/progressReader.py:121
+msgid "Ungültiger Intervallwert"
+msgstr "Недійсне значення інтервалу"
+
+#: addon/globalPlugins/progressReader.py:266
+#: addon/globalPlugins/progressReader.py:335
 msgid " (aktiv)"
 msgstr " (активний)"
 
-#. Translators: Status message when the progress bar is unavailable
-#: addon/globalPlugins/progressReader.py:120
-#: addon/globalPlugins/progressReader.py:164
+#: addon/globalPlugins/progressReader.py:268
+#: addon/globalPlugins/progressReader.py:337
 msgid " (inaktiv)"
 msgstr " (неактивний)"
 
-#. Translators: Message that announces the progress percentage and status
-#: addon/globalPlugins/progressReader.py:123
-#: addon/globalPlugins/progressReader.py:167
+#: addon/globalPlugins/progressReader.py:270
+#: addon/globalPlugins/progressReader.py:339
 #, python-brace-format
 msgid "{percent}% Fortschritt {status}"
 msgstr "{percent}% виконано {status}"
 
-#. Translators: Error message when an exception occurs while reading progress
-#: addon/globalPlugins/progressReader.py:180
+#: addon/globalPlugins/progressReader.py:353
+msgid "Keine Progressbar gefunden"
+msgstr "Не знайдено індикатора виконання"
+
+#: addon/globalPlugins/progressReader.py:387
 msgid "Fehler beim Auslesen: {}"
 msgstr "Помилка під час зчитування: {}"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
+#: addon/globalPlugins/progressReader.py:411
+msgid ""
+"Öffnet ein Fenster mit automatischer Aktualisierung der Progressbar (merkt "
+"beim Öffnen gefundene Progress-Objekte)"
+msgstr ""
+"Відкриває вікно з автоматичним оновленням індикатора виконання (відображає "
+"виявлені під час відкриття)"
+
+#: addon/globalPlugins/progressReader.py:424
+msgid "Auto-Refresh Fenster geschlossen"
+msgstr "Вікно автоматичного оновлення закрито"
+
+#: addon/globalPlugins/progressReader.py:444
+msgid "{} Progress-Objekt(e) gemerkt"
+msgstr "Помічено {} індикатор(и) виконання"
+
+#: addon/globalPlugins/progressReader.py:446
+#, fuzzy
+msgid "Keine Progress-Objekte gefunden zum Merken"
+msgstr "Не знайдено жодного індикатора виконання, які слід зазначити"
+
+#: addon/globalPlugins/progressReader.py:448
+msgid "Fehler beim Merken der Progress-Objekte"
+msgstr "Помилка запам'ятовування об'єктів прогресу"
+
+#: addon/globalPlugins/progressReader.py:458
+#: addon/globalPlugins/progressReader.py:460
+msgid "Lade Fortschritt..."
+msgstr "Триває завантаження..."
+
+#: addon/globalPlugins/progressReader.py:496
+msgid "Setzt das Aktualisierungsintervall für das Auto-Refresh-Fenster"
+msgstr "Встановлює інтервал оновлення для вікна автоматичного оновлення"
+
+#: addon/globalPlugins/progressReader.py:503
+msgid "Neues Intervall in Sekunden:"
+msgstr "Новий інтервал у секундах:"
+
+#: addon/globalPlugins/progressReader.py:503
+msgid "Intervall einstellen"
+msgstr "Встановити інтервал"
+
+#: addon/globalPlugins/progressReader.py:514
+msgid "Intervall gesetzt auf {} ms"
+msgstr "Інтервал встановлено на {} мс"
+
+#: addon/globalPlugins/progressReader.py:518
+#, fuzzy
+msgid "Ungültige Eingabe"
+msgstr "Невірний вхід"
+
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
 msgid "ProgressReader"
 msgstr "Читач індикатора виконання"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
 msgid "Sagt auf Knopfdruck den Fortschritt der Progressbar an."
-msgstr "Повідомляє стан індикатора виконання за натисканням клавіші (комбінацію можна змінити)."
+msgstr ""
+"Повідомляє інформацію індикатора виконання при натиску клавіші (комбінацію "
+"можна змінити)."
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid ""
+"Changelog for the add-on version.\n"
+"refactor: add auto-refresh window with configurable interval, NVDA settings "
+"panel integration, reset button, and gesture to update interval."
+msgstr ""
+"Журнал змін для версії доповнення.\n"
+"рефакторинг: додано вікно автоматичного оновлення з настроюваним "
+"інтервалом, інтеграцію панелі налаштувань NVDA, кнопку скидання та жест для "
+"інтервалу оновлення."
+
+#~ msgid "Liest den Fortschritt der Progressbar vor"
+#~ msgstr "Повідомляє прогрес індикатора виконання"
