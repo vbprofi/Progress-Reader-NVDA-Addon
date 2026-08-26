@@ -63,6 +63,10 @@ Zusätzlich bietet das Add-on ein eigenes **Auto-Refresh-Fenster** mit mehrzeili
 
 ## 4) Versionsverlauf
 
+### v0.4.1:
+- Neue Sprache: Vietnamesisch
+- Update uk language
+
 ### v0.4.0:
 - Bump Version and tested in latest NVDA 2026.1.1
 
